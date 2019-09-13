@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AdminLayoutComponent } from './shared/components/layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './shared/components/layouts/auth-layout/auth-layout.component';
-import { AuthGuard } from './shared/services/auth/auth.guard';
+import { RoleGuard } from './shared/services/auth/role.guard';
 
 export const rootRouterConfig: Routes = [
   {
@@ -28,12 +28,12 @@ export const rootRouterConfig: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
-    canActivate: [AuthGuard],
     children: [
       {
+        canActivateChild: [RoleGuard],
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
-        data: { title: 'Dashboard', breadcrumb: 'DASHBOARD' }
+        data: { title: 'Dashboard', breadcrumb: 'DASHBOARD', roles: { all: ['GS_Cadastro_Total'], in: ['GS_Cadastro_Total'], except: ['TESTE1'] } }
       },
       {
         path: 'material',
@@ -106,9 +106,10 @@ export const rootRouterConfig: Routes = [
         data: { title: 'Chat', breadcrumb: 'CHAT' }
       },
       {
+        canActivateChild: [RoleGuard],
         path: 'cruds',
         loadChildren: () => import('./views/cruds/cruds.module').then(m => m.CrudsModule),
-        data: { title: 'CRUDs', breadcrumb: 'CRUDs' }
+        data: { title: 'CRUDs', breadcrumb: 'CRUDs', roles: { all: ['GS_Cadastro_Total'], in: ['GS_Cadastro_Total'], except: ['TESTE1'] } }
       },
       {
         path: 'shop',

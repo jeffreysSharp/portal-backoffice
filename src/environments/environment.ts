@@ -5,5 +5,12 @@
 
 export const environment = {
   production: false,
-  apiURL: 'developmentApi'
+  apiURL: 'https://backoffice.ativainvestimentos.com.br/ipo',
+  BASE_GATEWAY: 'https://api.hmg.backoffice.ativacorretora.com.br'
 };
+
+
+// export const environment = {
+//   production: false,
+//   apiURL: 'developmentApi'
+// };

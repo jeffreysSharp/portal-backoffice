@@ -1,32 +1,36 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// SERVICES
-import { ThemeService } from './services/theme.service';
-import { NavigationService } from "./services/navigation.service";
-import { RoutePartsService } from './services/route-parts.service';
-import { AuthGuard } from './services/auth/auth.guard';
+import { NgModule } from '@angular/core';
+import { SharedComponentsModule } from './components/shared-components.module';
+import { SharedDirectivesModule } from './directives/shared-directives.module';
+import { SharedPipesModule } from './pipes/shared-pipes.module';
 import { AppConfirmService } from './services/app-confirm/app-confirm.service';
 import { AppLoaderService } from './services/app-loader/app-loader.service';
+import { AuthGuard } from './services/auth/auth.guard';
+import { AuthService } from './services/auth/auth.service';
+import { RoleGuard } from './services/auth/role.guard';
+import { NavigationService } from "./services/navigation.service";
+import { RoutePartsService } from './services/route-parts.service';
+// SERVICES
+import { ThemeService } from './services/theme.service';
 
-import { SharedComponentsModule } from './components/shared-components.module';
-import { SharedPipesModule } from './pipes/shared-pipes.module';
-import { SharedDirectivesModule } from './directives/shared-directives.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     SharedComponentsModule,
     SharedPipesModule,
-    SharedDirectivesModule    
+    SharedDirectivesModule
   ],
   providers: [
     ThemeService,
     NavigationService,
     RoutePartsService,
     AuthGuard,
+    RoleGuard,
     AppConfirmService,
-    AppLoaderService
+    AppLoaderService,
+    AuthService
   ],
   exports: [
     SharedComponentsModule,
