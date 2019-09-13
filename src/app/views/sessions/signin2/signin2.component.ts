@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomValidators } from 'ng2-validation';
 
 @Component({
@@ -11,7 +12,7 @@ export class Signin2Component implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
 
@@ -20,9 +21,9 @@ export class Signin2Component implements OnInit {
 
     this.signupForm = this.fb.group(
       {
-        email: ["",[Validators.required,Validators.email]],
+        email: ["", [Validators.required, Validators.email]],
         password: password,
-        agreed: [false,Validators.required]
+        agreed: [false, Validators.required]
       }
     );
   }
@@ -31,6 +32,8 @@ export class Signin2Component implements OnInit {
     if (!this.signupForm.invalid) {
       // do what you wnat with your data
       console.log(this.signupForm.value);
+      this.router.navigateByUrl('/cruds/ngx-table');
+
     }
   }
 }
