@@ -66,13 +66,13 @@ export class NavigationService {
     //     { name: "Dark Cards", state: "dark" }
     //   ]
     // },
-    {
-      name: "CRUD Table",
-      type: "link",
-      tooltip: "CRUD Table",
-      icon: "format_list_bulleted",
-      state: "cruds/ngx-table"
-    },
+    // {
+    //   name: "CRUD Table",
+    //   type: "link",
+    //   tooltip: "CRUD Table",
+    //   icon: "format_list_bulleted",
+    //   state: "cruds/ngx-table"
+    // },
     {
       name: "Cadastro",
       type: "link",
@@ -619,13 +619,13 @@ export class NavigationService {
     //   icon: "chat",
     //   state: "chat"
     // },
-    {
-      name: "CRUD Table",
-      type: "link",
-      tooltip: "CRUD Table",
-      icon: "format_list_bulleted",
-      state: "cruds/ngx-table"
-    },
+    // {
+    //   name: "CRUD Table",
+    //   type: "link",
+    //   tooltip: "CRUD Table",
+    //   icon: "format_list_bulleted",
+    //   state: "cruds/ngx-table"
+    // },
     {
       name: "Cadastro",
       type: "link",

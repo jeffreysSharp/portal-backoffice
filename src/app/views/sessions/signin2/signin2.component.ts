@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { ISigninForm } from 'app/shared/interfaces/isigin.interface';
 import { AuthService } from 'app/shared/services/auth/auth.service';
-import { CustomValidators } from 'ng2-validation';
 import { SessionName } from '../../../shared/enums/session.name.enum';
 
 @Component({
@@ -22,8 +21,6 @@ export class Signin2Component implements OnInit {
   ngOnInit() {
 
     const password = new FormControl('', Validators.required);
-    const confirmPassword = new FormControl('', CustomValidators.equalTo(password));
-
     this.signupForm = this.fb.group(
       {
         email: ["", [Validators.required, Validators.email]],
@@ -38,8 +35,6 @@ export class Signin2Component implements OnInit {
     if (!this.signupForm.invalid) {
       // do what you wnat with your data
       console.log(this.signupForm.value);
-      // this.router.navigateByUrl('/cruds/ngx-table');
-
       const signinData = this.signupForm.value as ISigninForm;
 
       signinData.email = `${signinData.email.split('@')[0]}@ativainvestimentos.com.br`;
@@ -47,7 +42,7 @@ export class Signin2Component implements OnInit {
       this.authService.signin({ usuario: signinData.email, senha: signinData.password }).subscribe(
         accessData => {
           localStorage.setItem(SessionName.name, JSON.stringify(accessData));
-          this.router.navigate(['/cruds/ngx-table']);
+          this.router.navigate(['/registry/registry-list']);
         },
         (err: HttpErrorResponse) => {
           localStorage.removeItem(SessionName.name);
