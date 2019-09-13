@@ -47,7 +47,7 @@ export class LayoutService {
   setAppLayout() {
     //******** SET YOUR LAYOUT OPTIONS HERE *********
     this.layoutConf = {
-      "navigationPos": "side",      // side, top
+      "navigationPos": "top",      // side, top
       "sidebarStyle": "full",       // full, compact, closed
       "sidebarColor": "white",      // http://demos.ui-lib.com/egret-doc/#egret-colors
       "sidebarCompactToggle": false, // applied when "sidebarStyle" is "compact"
@@ -66,7 +66,7 @@ export class LayoutService {
   }
 
   publishLayoutChange(lc: ILayoutConf, opt: ILayoutChangeOptions = {}) {
-    if(this.layoutConf.matTheme !== lc.matTheme && lc.matTheme) {
+    if (this.layoutConf.matTheme !== lc.matTheme && lc.matTheme) {
       this.themeService.changeTheme(this.layoutConf.matTheme, lc.matTheme);
     }
 
@@ -85,17 +85,17 @@ export class LayoutService {
       // this.publishLayoutChange(this.layoutConf);
     } catch (e) { }
   }
-  
+
   adjustLayout(options: IAdjustScreenOptions = {}) {
     let sidebarStyle: string;
     this.isMobile = this.isSm();
     this.currentRoute = options.route || this.currentRoute;
     sidebarStyle = this.isMobile ? 'closed' : this.layoutConf.sidebarStyle;
-    
+
     if (this.currentRoute) {
       this.fullWidthRoutes.forEach(route => {
-        if(this.currentRoute.indexOf(route) !== -1) {
-          sidebarStyle =  'closed';
+        if (this.currentRoute.indexOf(route) !== -1) {
+          sidebarStyle = 'closed';
         }
       });
     }
