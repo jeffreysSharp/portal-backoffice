@@ -112,6 +112,12 @@ export const rootRouterConfig: Routes = [
         data: { title: 'CRUDs', breadcrumb: 'CRUDs', roles: { all: ['GS_Cadastro_Total'], in: ['GS_Cadastro_Total'], except: ['TESTE1'] } }
       },
       {
+        canActivateChild: [RoleGuard],
+        path: 'registry',
+        loadChildren: () => import('./views/registry/registry.module').then(m => m.RegistryModule),
+        data: { title: 'Cadastro', breadcrumb: 'Cadastro', roles: { all: ['GS_Cadastro_Total'], in: ['GS_Cadastro_Total'], except: ['TESTE1'] } }
+      },
+      {
         path: 'shop',
         loadChildren: () => import('./views/shop/shop.module').then(m => m.ShopModule),
         data: { title: 'Shop', breadcrumb: 'SHOP' }

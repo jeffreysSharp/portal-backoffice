@@ -73,6 +73,13 @@ export class NavigationService {
       icon: "format_list_bulleted",
       state: "cruds/ngx-table"
     },
+    {
+      name: "Cadastro",
+      type: "link",
+      tooltip: "Cadastro",
+      icon: "format_list_bulleted",
+      state: "registry/registry-list"
+    },
     // {
     //   name: "ECOMMERCE",
     //   type: "dropDown",
@@ -426,11 +433,11 @@ export class NavigationService {
     //   state: "chat"
     // },
     {
-      name: "CRUD Table",
+      name: "Cadastro",
       type: "link",
-      tooltip: "CRUD Table",
+      tooltip: "Cadastro",
       icon: "format_list_bulleted",
-      state: "cruds/ngx-table"
+      state: "registry/registry-list"
     },
     // {
     //   name: "DIALOGS",
@@ -618,6 +625,13 @@ export class NavigationService {
       tooltip: "CRUD Table",
       icon: "format_list_bulleted",
       state: "cruds/ngx-table"
+    },
+    {
+      name: "Cadastro",
+      type: "link",
+      tooltip: "Cadastro",
+      icon: "format_list_bulleted",
+      state: "registry/registry-list"
     },
     // {
     //   name: "CALENDAR",
