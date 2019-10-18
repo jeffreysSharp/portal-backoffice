@@ -127,7 +127,7 @@
           <mat-icon>notifications_off</mat-icon>
           <span>Disable alerts</span>
         </button> -->
-                <button mat-menu-item [routerLink]="['/sessions/signin2']">
+                <button mat-menu-item [routerLink]="['/sessions/signin']" (click)="logout()">
                     <mat-icon>exit_to_app</mat-icon>
                     <span>Sair</span>
                 </button>

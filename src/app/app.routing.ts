@@ -6,7 +6,7 @@ import { RoleGuard } from './shared/services/auth/role.guard';
 export const rootRouterConfig: Routes = [
   {
     path: '',
-    redirectTo: 'sessions/signin2',
+    redirectTo: 'sessions/signin',
     pathMatch: 'full'
   },
   {
