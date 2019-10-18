@@ -31,15 +31,6 @@ export class SigninComponent implements OnInit {
     );
   }
 
-  // signin() {
-  //   const signinData = this.signupForm.value
-  //   console.log(signinData);
-
-  //   this.submitButton.disabled = true;
-  //   this.progressBar.mode = 'indeterminate';
-  // }
-
-
   onSubmit() {
     if (!this.signinForm.invalid) {
 
