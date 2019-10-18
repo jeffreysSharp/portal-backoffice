@@ -10,19 +10,19 @@ export class AuthGuard implements CanActivateChild {
   constructor(protected router: Router, protected authService: AuthService) { }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    if (this.router.url == '/sessions/signin2') return of(true);
+    if (this.router.url == '/sessions/signin') return of(true);
 
     return this.authService.getAccessToken().pipe(
       switchMap((token: string) => {
         if (this.isNullOrWhiteSpace(token)) {
-          this.router.navigate(['sessions/signin2']);
+          this.router.navigate(['sessions/signin']);
           return of(false);
         }
 
         return this.authService.validateToken(token).pipe(
           catchError(err => {
             if (err.status == 401) {
-              this.router.navigate(['sessions/signin2']);
+              this.router.navigate(['sessions/signin']);
             } else if (err.status == 403) {
               this.router.navigate(['dashboard']);
             }

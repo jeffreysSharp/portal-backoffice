@@ -1,14 +1,13 @@
 $mat-primary: map-get($material-colors, light-blue);
 $mat-accent: map-get($material-colors, amber);
 
-
 $egret-primary: mat-palette($mat-primary);
-$egret-accent:  mat-palette($mat-accent);
+$egret-accent: mat-palette($mat-accent);
 
 // custom theme palettes are passed into a theme function
 $egret-theme: mat-light-theme($egret-primary, $egret-accent);
 
-$primary-dark: darken( map-get($mat-primary, 500), 8% );
+$primary-dark: darken(map-get($mat-primary, 500), 8%);
 
 // Material theme is wrapped by a parent class
 .egret-blue {
@@ -22,7 +21,7 @@ $primary-dark: darken( map-get($mat-primary, 500), 8% );
     .toolbar-avatar.online > .status-dot,
     .cal-open-day-events,
     div.hopscotch-bubble {
-        background: map-get($mat-primary, 500) !important;
+        background: map-get($mat-primary, 900) !important;
         color: #ffffff !important;
     }
     .mat-color-primary,
@@ -47,9 +46,9 @@ $primary-dark: darken( map-get($mat-primary, 500), 8% );
         background: #ffffff !important;
     }
     .default-light-bg {
-      background: #fafafa !important;
+        background: #fafafa !important;
     }
-    /* Hopscotch Tour */ 
+    /* Hopscotch Tour */
     div.hopscotch-bubble {
         border-color: $primary-dark;
     }
@@ -113,11 +112,10 @@ $primary-dark: darken( map-get($mat-primary, 500), 8% );
 
     .fill-color-warn {
         color: #f44336;
-
     }
     @media (max-width: 959px) {
-      .default-bg-mobile {
-        background: #ffffff;
-      }
+        .default-bg-mobile {
+            background: #ffffff;
+        }
     }
 }
