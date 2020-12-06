@@ -66,12 +66,19 @@ export class NavigationService {
     //     { name: "Dark Cards", state: "dark" }
     //   ]
     // },
+    // {
+    //   name: "CRUD Table",
+    //   type: "link",
+    //   tooltip: "CRUD Table",
+    //   icon: "format_list_bulleted",
+    //   state: "cruds/ngx-table"
+    // },
     {
-      name: "CRUD Table",
+      name: "Cadastro",
       type: "link",
-      tooltip: "CRUD Table",
+      tooltip: "Cadastro",
       icon: "format_list_bulleted",
-      state: "cruds/ngx-table"
+      state: "registry/registry-list"
     },
     // {
     //   name: "ECOMMERCE",
@@ -426,11 +433,11 @@ export class NavigationService {
     //   state: "chat"
     // },
     {
-      name: "CRUD Table",
+      name: "Cadastro",
       type: "link",
-      tooltip: "CRUD Table",
+      tooltip: "Cadastro",
       icon: "format_list_bulleted",
-      state: "cruds/ngx-table"
+      state: "registry/registry-list"
     },
     // {
     //   name: "DIALOGS",
@@ -612,12 +619,19 @@ export class NavigationService {
     //   icon: "chat",
     //   state: "chat"
     // },
+    // {
+    //   name: "CRUD Table",
+    //   type: "link",
+    //   tooltip: "CRUD Table",
+    //   icon: "format_list_bulleted",
+    //   state: "cruds/ngx-table"
+    // },
     {
-      name: "CRUD Table",
+      name: "Cadastro",
       type: "link",
-      tooltip: "CRUD Table",
+      tooltip: "Cadastro",
       icon: "format_list_bulleted",
-      state: "cruds/ngx-table"
+      state: "registry/registry-list"
     },
     // {
     //   name: "CALENDAR",
